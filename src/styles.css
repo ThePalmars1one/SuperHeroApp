@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Comicy', sans-serif;
+    font-weight: 100;
+}
+
+body{
+    background: black;
+    color: white;
+}
+
+@font-face {
+    font-family: 'Comicy';
+    src: url('./assets/fonts/Comicy.ttf');
+}
