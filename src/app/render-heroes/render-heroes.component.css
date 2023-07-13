@@ -111,7 +111,7 @@
     display: none;
     background: #F6283B;
     border: none;
-    z-index: 1;
+    z-index: 3;
 }
 
 .filter_buttons button{
