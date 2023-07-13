@@ -16,8 +16,9 @@ export class RenderHeroesComponent{
   genders: any[] = [];
   races: any[]=[];
   heights:any[]=[];
-
-
+  weights:any[]=[];
+  eyeColors:any[]=[];
+  hairColors:any[]=[];
 
   showPowerstatButtons = false;
 
@@ -33,6 +34,9 @@ export class RenderHeroesComponent{
       this.getGendersFromHeroes();
       this.getRacesFromHeroes();
       this.getHeightsFromHeroes();
+      this.getWeightsFromHeroes();
+      this.getEyecolorsFromHeroes();
+      this.getHaircolorsFromHeroes();
     } catch (error) {
       // ITS PLANNED TO ADD A ERROR MESSAGE TO SHOW IT TO THE USER
     }
@@ -41,6 +45,7 @@ export class RenderHeroesComponent{
   ngOnInit() {
     this.loadHeroes();
     this.sortHeights();
+    this.sortWeights();
   }
 
   //POWERSTATS
@@ -148,6 +153,102 @@ export class RenderHeroesComponent{
       return heightA - heightB;
     });
   }
+
+  //WEIGHTS
+
+  getWeightsFromHeroes(){
+
+    const weights = this.allHeroes.map((hero: any) => {
+      return hero.appearance.weight[1];
+    });
+  
+    const singleWeights = Array.from(new Set(weights));
+  
+    this.weights = singleWeights;
+    console.log(this.weights);
+
+  }
+
+  getHeroesByWeights(weight: string){
+
+    const filteredWeights = this.allHeroes.filter((hero: any) => {
+      return hero.appearance.weight.includes(weight);
+    });
+  
+    this.actualHeroes = filteredWeights;
+  
+  }
+
+  sortWeights() {
+    this.weights.sort((a, b) => {
+      const weightA = parseInt(a, 10);
+      const weightB = parseInt(b, 10);
+      return weightA - weightB;
+    });
+  }
+
+  //EYE COLOR
+
+  getEyecolorsFromHeroes(){
+
+    const eyeColors = this.allHeroes.map((hero: any) => {
+      return hero.appearance['eye-color'].toLowerCase();
+    });
+  
+    const singleColors = Array.from(new Set(eyeColors));
+  
+    this.eyeColors = singleColors;
+    console.log(this.eyeColors);
+
+  }
+
+  getHeroesByEyecolors(eyeColor: string){
+
+    const filteredColors = this.allHeroes.filter((hero: any) => {
+      return hero.appearance['eye-color'].toLowerCase() === eyeColor.toLowerCase();
+    });
+  
+    this.actualHeroes = filteredColors;
+  
+  }
+
+  //HAIR COLOR
+
+  getHaircolorsFromHeroes(){
+
+    const hairColors = this.allHeroes.map((hero: any) => {
+      return hero.appearance['hair-color'].toLowerCase();
+    });
+  
+    const singleHaircolors = Array.from(new Set(hairColors));
+  
+    this.hairColors = singleHaircolors;
+    console.log(this.hairColors);
+
+  }
+
+  getHeroesByHaircolors(hairColor: string){
+
+    const filteredHaircolors = this.allHeroes.filter((hero: any) => {
+      return hero.appearance['hair-color'].toLowerCase() === hairColor.toLowerCase();
+    });
+  
+    this.actualHeroes = filteredHaircolors;
+  
+  }
+
+  //RESTART
+
+  restartHeroes(){
+    this.actualHeroes = this.allHeroes;
+  }
+
+
+
+
+
+
+
 
 
 

@@ -56,6 +56,49 @@
 
     </div>
 
+    <div class="buttonFilter_container" (mouseover)="showPowerstatButtons = true" (mouseleave)="showPowerstatButtons = false">
+        
+        <div class="buttonFilter_header">
+            <h2>Weight</h2>
+            <img src="assets/img/arrow.svg" alt="Arrow Icon">
+            <img src="assets/img/arrow2.svg" alt="Arrow Icon">
+        </div>
+
+        <div class="filter_buttons" *ngIf="showPowerstatButtons">
+            <button *ngFor="let weight of weights.sort()" (click)="getHeroesByWeights(weight)">{{ weight }}</button>
+        </div>
+
+    </div>
+
+    <div class="buttonFilter_container" (mouseover)="showPowerstatButtons = true" (mouseleave)="showPowerstatButtons = false">
+        
+        <div class="buttonFilter_header">
+            <h2>Eye Color</h2>
+            <img src="assets/img/arrow.svg" alt="Arrow Icon">
+            <img src="assets/img/arrow2.svg" alt="Arrow Icon">
+        </div>
+
+        <div class="filter_buttons" *ngIf="showPowerstatButtons">
+            <button *ngFor="let eye of eyeColors" (click)="getHeroesByEyecolors(eye)">{{ eye }}</button>
+        </div>
+
+    </div>
+
+    <div class="buttonFilter_container" (mouseover)="showPowerstatButtons = true" (mouseleave)="showPowerstatButtons = false">
+        
+        <div class="buttonFilter_header">
+            <h2>Hair Color</h2>
+            <img src="assets/img/arrow.svg" alt="Arrow Icon">
+            <img src="assets/img/arrow2.svg" alt="Arrow Icon">
+        </div>
+
+        <div class="filter_buttons" *ngIf="showPowerstatButtons">
+            <button *ngFor="let hair of hairColors" (click)="getHeroesByHaircolors(hair)">{{ hair }}</button>
+        </div>
+
+    </div>
+
+    <button class="restart_filters" (click)="restartHeroes()"><img src="assets/img/restart.png" alt="Restart icon"></button>
 
 </section>
 

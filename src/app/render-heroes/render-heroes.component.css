@@ -145,4 +145,27 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.restart_filters{
+    background: none;
+    border: none;
+}
+
+.restart_filters img{
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (min-width: 650px){
+    .heroes_container{
+        flex-flow: row wrap;
+        gap: 50px;
+    }
+
+    .filters_container{
+        flex-flow: row wrap;
+        gap: 20px;
+    }
 }
