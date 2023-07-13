@@ -11,7 +11,7 @@ export class HeroesService {
   async getHeroes(): Promise<any> {
     try {
       const heroes = [];
-      for (let i = 1; i <= 10; i++) {
+      for (let i = 1; i <= 50; i++) {
         let response = await fetch('https://superheroapi.com/api.php/6601680059852276' + '/' + i);
         let data = await response.json();
         console.log(data)

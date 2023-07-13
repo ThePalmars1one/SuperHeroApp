@@ -146,6 +146,7 @@
 
 </section>
 
-
-
-<div *ngIf="allHeroes.length === 0">No hay héroes disponibles.</div>
+<div *ngIf="allHeroes.length <=15" class="loading">
+    <h2>LOADING</h2>
+    <img src="assets/img/loading.gif" alt="Loading GIF">
+</div>
