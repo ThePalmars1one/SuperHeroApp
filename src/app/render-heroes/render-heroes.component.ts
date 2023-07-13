@@ -243,14 +243,4 @@ export class RenderHeroesComponent{
     this.actualHeroes = this.allHeroes;
   }
 
-
-
-
-
-
-
-
-
-
-
 }
