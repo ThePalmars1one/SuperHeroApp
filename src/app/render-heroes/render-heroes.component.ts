@@ -26,6 +26,7 @@ export class RenderHeroesComponent{
       this.actualHeroes = this.allHeroes;
       this.getCategoriesFromHeroes();
       this.getGendersFromHeroes();
+      this.getRacesFromHeroes();
     } catch (error) {
       // Manejar cualquier error que pueda ocurrir durante la llamada a la API.
     }
@@ -80,9 +81,28 @@ export class RenderHeroesComponent{
   console.log(this.genders);
 }
 
-getRacesFromHeroes() {
-  
+  getRacesFromHeroes() {
+  const races = this.allHeroes.map((hero: any) => {
+    return hero.appearance.race.toLowerCase();
+  });
+
+  const singleRaces = Array.from(new Set(races));
+
+  this.races = singleRaces;
+  console.log(this.races);
+
 }
+
+  getHeroesByRaces(race: string){
+
+    const filteredRaces = this.allHeroes.filter((hero: any) => {
+      return hero.appearance.race.toLowerCase() === race.toLowerCase();
+    });
+  
+    this.actualHeroes = filteredRaces;
+  
+
+  }
 
 
 

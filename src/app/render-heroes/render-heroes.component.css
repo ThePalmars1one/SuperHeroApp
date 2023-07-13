@@ -77,26 +77,72 @@
     align-items: center;
 }
 
-.powerstats-container {
+/* Filters Styles */
+
+.buttonFilter_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F6283B;
     position: relative;
-    display: inline-block;
+    width: 360px;
+    height: 50px;
+    margin-bottom: 1rem;
 }
   
-.powerstats-header {
+.buttonFilter_header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.buttonFilter_header img{
+    margin-left: 1rem;
+}
+
+.buttonFilter_header img:last-child{
+    display: none;
+}
+  
+.filter_buttons {
+    position: absolute;
+    top: 100%;
+    display: none;
+    background: #F6283B;
+    border: none;
+    z-index: 1;
+}
+
+.filter_buttons button{
+    background: none;
+    border: none;
+    width: 360px;
+    height: 35px;
+    font-size: 14px;
+    color: white;
     cursor: pointer;
 }
   
-.powerstats-buttons {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    display: none;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    z-index: 1;
-}
-  
-.powerstats-container:hover .powerstats-buttons {
+.buttonFilter_container:hover .filter_buttons {
     display: block;
+}
+
+.buttonFilter_container:hover, .filter_buttons button:hover{
+    background: #0C6AF6;
+}
+
+.buttonFilter_container:hover img:first-child{
+    display: none;
+}
+
+.buttonFilter_container:hover img:last-child{
+    display: block;
+}
+
+.filters_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
