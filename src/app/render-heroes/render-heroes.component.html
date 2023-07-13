@@ -1,13 +1,26 @@
 <section>
 
-    
+    <div class="powerstats-container" (mouseover)="showPowerstatButtons = true" (mouseleave)="showPowerstatButtons = false">
+        
+        <div class="powerstats-header">
+            <span class="powerstats-label">Powerstats</span>
+        </div>
+
+        <div class="powerstats-buttons" *ngIf="showPowerstatButtons">
+            <button *ngFor="let category of categories" (click)="getHeroesByPowerstats(category)">{{ category }}</button>
+        </div>
+
+    </div>
+
+    <button *ngFor="let gender of genders" (click)="getHeroesByGenders(gender)">{{ gender }}</button>
+
 </section>
 
 
 
 
 <section class="heroes_container">
-    <div *ngFor="let hero of allHeroes; index as i" class="hero_card">
+    <div *ngFor="let hero of actualHeroes; index as i" class="hero_card">
 
         <img [src]="hero.image.url">
 

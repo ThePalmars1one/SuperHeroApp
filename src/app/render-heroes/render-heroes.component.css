@@ -76,3 +76,27 @@
     justify-content: center;
     align-items: center;
 }
+
+.powerstats-container {
+    position: relative;
+    display: inline-block;
+}
+  
+.powerstats-header {
+    cursor: pointer;
+}
+  
+.powerstats-buttons {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    z-index: 1;
+}
+  
+.powerstats-container:hover .powerstats-buttons {
+    display: block;
+}
