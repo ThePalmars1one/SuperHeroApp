@@ -11,6 +11,7 @@ export class RenderHeroesComponent{
 
   allHeroes: any= [];
   actualHeroes: any[] = [];
+  search = "";
 
   categories: string[] = [];
   genders: any[] = [];
@@ -22,7 +23,7 @@ export class RenderHeroesComponent{
 
   showPowerstatButtons = false;
 
-  constructor(private _heroesService: HeroesService) {}
+  constructor(private _heroesService: HeroesService) { }
 
   async loadHeroes() {
     try {
@@ -46,6 +47,16 @@ export class RenderHeroesComponent{
     this.loadHeroes();
     this.sortHeights();
     this.sortWeights();
+  }
+
+  filterHeroes() {
+    if (this.search.trim() === "") {
+      this.actualHeroes = this.allHeroes;
+    } else {
+      this.actualHeroes = this.allHeroes.filter((hero: any) =>
+        hero.name.toLowerCase().includes(this.search.toLowerCase())
+      );
+    }
   }
 
   //POWERSTATS
@@ -241,6 +252,7 @@ export class RenderHeroesComponent{
 
   restartHeroes(){
     this.actualHeroes = this.allHeroes;
+    this.search = "";
   }
 
 }

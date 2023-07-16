@@ -166,6 +166,33 @@
     align-items: center;
 }
 
+.searchBar_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: white;
+    width: 360px;
+    height: 45px;
+    border-radius: 25px;
+    padding: 5px;
+}
+
+.searchBar_container input{
+    border: none;
+    text-align: center;
+    color:#F6283B;
+    font-size: 18px;
+}
+
+.searchBar_container input:focus{
+    outline: none;
+}
+
+.input_container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
 
 @media screen and (min-width: 650px){
     .heroes_container{
