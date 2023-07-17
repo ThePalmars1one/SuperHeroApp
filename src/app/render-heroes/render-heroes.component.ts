@@ -75,7 +75,7 @@ export class RenderHeroesComponent{
   getHeroesByPowerstats(category: string) {
     
     const filteredHeroes = this.allHeroes.filter((hero: any) => {
-      return hero.powerstats.hasOwnProperty(category);
+      return hero.powerstats.hasOwnProperty(category) && hero.powerstats[category] !== "null";
     });
     
     filteredHeroes.sort((a: any, b: any) => {
@@ -86,6 +86,7 @@ export class RenderHeroesComponent{
     });
     
     this.actualHeroes = filteredHeroes;
+    this.page = 1;
   }
 
   getCategoriesFromHeroes() {
@@ -104,6 +105,7 @@ export class RenderHeroesComponent{
   });
 
   this.actualHeroes = filteredGenders;
+  this.page = 1;
 
 }
 
@@ -140,6 +142,7 @@ export class RenderHeroesComponent{
     });
   
     this.actualHeroes = filteredRaces;
+    this.page = 1;
   
   }
 
@@ -165,6 +168,7 @@ export class RenderHeroesComponent{
     });
   
     this.actualHeroes = filteredHeights;
+    this.page = 1;
   
   }
 
@@ -198,6 +202,7 @@ export class RenderHeroesComponent{
     });
   
     this.actualHeroes = filteredWeights;
+    this.page = 1;
   
   }
 
@@ -231,6 +236,7 @@ export class RenderHeroesComponent{
     });
   
     this.actualHeroes = filteredColors;
+    this.page = 1;
   
   }
 
@@ -256,6 +262,7 @@ export class RenderHeroesComponent{
     });
   
     this.actualHeroes = filteredHaircolors;
+    this.page = 1;
   
   }
 
@@ -266,6 +273,8 @@ export class RenderHeroesComponent{
     this.search = "";
     this.noHeroesFound = false;
   }
+
+  //PAGINATION
 
   OnchangePages(event:any){
     this.page=event;

@@ -117,10 +117,12 @@
 
     </div>
 
-    <button class="restart_filters" (click)="restartHeroes()"><img src="assets/img/restart.png"
-            alt="Restart icon"></button>
-
 </section>
+
+<div class="restart_container">
+    <button class="restart_filters" (click)="restartHeroes()"><img src="assets/img/restart.png" alt="Restart icon">
+    </button>
+</div>
 
 
 <section class="heroes_container">
@@ -178,4 +180,3 @@
     <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)='OnchangePages($event)'>
     </pagination-controls>
 </section>
-
