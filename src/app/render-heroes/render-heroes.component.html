@@ -159,6 +159,7 @@
 
         </div>
 
+
     </div>
 
 </section>
@@ -166,4 +167,8 @@
 <div *ngIf="allHeroes.length < 5" class="loading">
     <h2>LOADING</h2>
     <img src="assets/img/loading.gif" alt="Loading GIF">
+</div>
+
+<div *ngIf="noHeroesFound" class="noHeroesFound">
+    NO HEROES FOUND.
 </div>

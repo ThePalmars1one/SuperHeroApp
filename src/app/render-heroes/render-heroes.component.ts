@@ -22,6 +22,7 @@ export class RenderHeroesComponent{
   hairColors:any[]=[];
 
   showPowerstatButtons = false;
+  noHeroesFound: boolean = false;
 
   constructor(private _heroesService: HeroesService) { }
 
@@ -50,12 +51,19 @@ export class RenderHeroesComponent{
   }
 
   filterHeroes() {
+
+    this.noHeroesFound = false;
+    
     if (this.search.trim() === "") {
       this.actualHeroes = this.allHeroes;
     } else {
       this.actualHeroes = this.allHeroes.filter((hero: any) =>
         hero.name.toLowerCase().includes(this.search.toLowerCase())
       );
+    }
+
+    if (this.actualHeroes.length === 0) {
+      this.noHeroesFound = true;
     }
   }
 
@@ -253,6 +261,7 @@ export class RenderHeroesComponent{
   restartHeroes(){
     this.actualHeroes = this.allHeroes;
     this.search = "";
+    this.noHeroesFound = false;
   }
 
 }
