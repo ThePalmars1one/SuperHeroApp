@@ -12,6 +12,7 @@ export class RenderHeroesComponent{
   allHeroes: any= [];
   actualHeroes: any[] = [];
   search = "";
+  page: number = 1;
 
   categories: string[] = [];
   genders: any[] = [];
@@ -66,6 +67,8 @@ export class RenderHeroesComponent{
       this.noHeroesFound = true;
     }
   }
+
+  // LOADING
 
   //POWERSTATS
 
@@ -262,6 +265,10 @@ export class RenderHeroesComponent{
     this.actualHeroes = this.allHeroes;
     this.search = "";
     this.noHeroesFound = false;
+  }
+
+  OnchangePages(event:any){
+    this.page=event;
   }
 
 }
