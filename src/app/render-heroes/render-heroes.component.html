@@ -1,14 +1,3 @@
-<section class="input_container">
-
-    <div class="searchBar_container">
-        <img src="assets/img/search.svg" alt="Search Icon">
-        <input type="text" class="searchBar" placeholder="FIND YOUR HERO" [(ngModel)]="search" (input)="filterHeroes()">
-    </div>
-
-</section>
-
-
-
 <section class="filters_container">
 
     <div class="buttonFilter_container" (mouseover)="showPowerstatButtons = true"
@@ -21,7 +10,7 @@
         </div>
 
         <div class="filter_buttons" *ngIf="showPowerstatButtons">
-            <button *ngFor="let category of categories" (click)="getHeroesByPowerstats(category)">{{ category
+            <button *ngFor="let category of categories" (click)="getHeroesByPowerstats(category); showPowerstatButtons = false">{{ category
                 }}</button>
         </div>
 
@@ -37,7 +26,7 @@
         </div>
 
         <div class="filter_buttons" *ngIf="showPowerstatButtons">
-            <button *ngFor="let gender of genders" (click)="getHeroesByGenders(gender)">{{ gender }}</button>
+            <button *ngFor="let gender of genders" (click)="getHeroesByGenders(gender); showPowerstatButtons = false">{{ gender }}</button>
         </div>
 
     </div>
@@ -52,7 +41,7 @@
         </div>
 
         <div class="filter_buttons" *ngIf="showPowerstatButtons">
-            <button *ngFor="let race of races" (click)="getHeroesByRaces(race)">{{ race }}</button>
+            <button *ngFor="let race of races" (click)="getHeroesByRaces(race); showPowerstatButtons = false">{{ race }}</button>
         </div>
 
     </div>
@@ -67,7 +56,7 @@
         </div>
 
         <div class="filter_buttons" *ngIf="showPowerstatButtons">
-            <button *ngFor="let height of heights.sort()" (click)="getHeroesByHeights(height)">{{ height }}</button>
+            <button *ngFor="let height of heights.sort()" (click)="getHeroesByHeights(height); showPowerstatButtons = false">{{ height }}</button>
         </div>
 
     </div>
@@ -82,7 +71,7 @@
         </div>
 
         <div class="filter_buttons" *ngIf="showPowerstatButtons">
-            <button *ngFor="let weight of weights.sort()" (click)="getHeroesByWeights(weight)">{{ weight }}</button>
+            <button *ngFor="let weight of weights.sort()" (click)="getHeroesByWeights(weight); showPowerstatButtons = false">{{ weight }}</button>
         </div>
 
     </div>
@@ -97,7 +86,7 @@
         </div>
 
         <div class="filter_buttons" *ngIf="showPowerstatButtons">
-            <button *ngFor="let eye of eyeColors" (click)="getHeroesByEyecolors(eye)">{{ eye }}</button>
+            <button *ngFor="let eye of eyeColors" (click)="getHeroesByEyecolors(eye); showPowerstatButtons = false">{{ eye }}</button>
         </div>
 
     </div>
@@ -112,9 +101,18 @@
         </div>
 
         <div class="filter_buttons" *ngIf="showPowerstatButtons">
-            <button *ngFor="let hair of hairColors" (click)="getHeroesByHaircolors(hair)">{{ hair }}</button>
+            <button *ngFor="let hair of hairColors" (click)="getHeroesByHaircolors(hair); showPowerstatButtons = false">{{ hair }}</button>
         </div>
 
+    </div>
+
+</section>
+
+<section class="input_container">
+
+    <div class="searchBar_container">
+        <img src="assets/img/search.svg" alt="Search Icon">
+        <input type="text" class="searchBar" placeholder="FIND YOUR HERO" [(ngModel)]="search" (input)="filterHeroes()">
     </div>
 
 </section>
@@ -169,7 +167,6 @@
 
 <div *ngIf="allHeroes.length <= 5" class="loading">
     <h2>LOADING</h2>
-    <img src="assets/img/loading.gif" alt="Loading GIF">
 </div>
 
 <div *ngIf="noHeroesFound" class="noHeroesFound">

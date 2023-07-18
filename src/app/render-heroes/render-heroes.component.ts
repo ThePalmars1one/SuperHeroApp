@@ -66,6 +66,8 @@ export class RenderHeroesComponent{
     if (this.actualHeroes.length === 0) {
       this.noHeroesFound = true;
     }
+
+    this.page = 1;
   }
 
   // LOADING
