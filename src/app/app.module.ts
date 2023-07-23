@@ -9,13 +9,15 @@ import { RenderHeroesComponent } from './render-heroes/render-heroes.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RenderHeroesComponent,
     HomeComponent,
-    FooterComponent
+    FooterComponent,
+    HeroesDetailComponent
   ],
   imports: [
     BrowserModule,
