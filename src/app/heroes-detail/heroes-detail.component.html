@@ -1,5 +1,78 @@
-<section *ngIf="hero">
-    <img [src]="hero.image.url">
-    <h2>{{ hero.name }}</h2>
-    <a routerLink="/"> Volver</a>
+<section *ngIf="hero" class="herodetail_container">
+
+    <div class="back_button">
+        <a routerLink="/"> <img src="assets/img/back_arrow.svg" alt="Back Icon"> </a>
+    </div>
+
+    <div class="hero_init">
+        <h2>{{ hero.name }}</h2>
+        <img [src]="hero.image.url">
+    </div>
+
+    <div class="hero_info">
+        <h2>NAME:</h2>
+        <h2>{{hero.biography["full-name"]}}</h2>
+
+        <h2>1ST APPEARANCE:</h2>
+        <h2>{{hero.biography["first-appearance"]}}</h2>
+
+        <h2>PUBLISHER:</h2>
+        <h2>{{hero.biography.publisher}}</h2>
+    </div>
+
+    <div class="hero_appearance">
+        <h2 class="hero_subtitle">APPEARANCE:</h2>
+
+        <div class="hero_appearance_stats">
+
+            <div class="hero_appearance_icons">
+                <img src="assets/img/weight_icon.svg" alt="Weight Icon">
+                <img src="assets/img/height_icon.svg" alt="Height Icon">
+                <img src="assets/img/eye_icon.svg" alt="Eye Color">
+                <img src="assets/img/hair_icon.svg" alt="Hair Color">
+            </div>
+            <div class="hero_appearance_value">
+                <h2>{{hero.appearance.weight[1]}}</h2>
+                <h2>{{hero.appearance.height[1]}}</h2>
+                <h2>{{hero.appearance["eye-color"]}}</h2>
+                <h2>{{hero.appearance["hair-color"]}}</h2>
+            </div>
+    
+        </div>
+
+    </div>
+
+    <div class="hero_powerstats">
+
+        <h2 class="hero_subtitle" >POWERSTATS:</h2>
+
+        <div class="hero_stats_container">
+
+            <div class="hero_stats">
+                <h2>{{hero.powerstats.intelligence}}</h2>
+                <h2>{{hero.powerstats.strength}}</h2>
+                <h2>{{hero.powerstats.power}}</h2>
+                <h2>{{hero.powerstats.speed}}</h2>
+                <h2>{{hero.powerstats.combat}}</h2>
+                <h2>{{hero.powerstats.durability}}</h2>
+            </div>
+    
+            <div class="hero_stats_names">
+                <h2>Intelligence</h2>
+                <h2>Strength</h2>
+                <h2>Power</h2>
+                <h2>Speed</h2>
+                <h2>Combat</h2>
+                <h2>Durability</h2>
+            </div>
+    
+        </div>
+
+    </div>
+   
+    
+    
+
+
+
 </section>

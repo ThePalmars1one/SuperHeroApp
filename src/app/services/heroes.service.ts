@@ -16,7 +16,7 @@ export class HeroesService {
     } else {
       try {
         this.heroes = [];
-        for (let i = 1; i <= 100; i++) {
+        for (let i = 1; i <= 10; i++) {
           let response = await fetch('https://superheroapi.com/api.php/6601680059852276' + '/' + i);
           let data = await response.json();
           this.heroes.push(data);
