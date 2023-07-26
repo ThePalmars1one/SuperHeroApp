@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HeroesDetailComponent } from './heroes-detail/heroes-detail.component';
     RenderHeroesComponent,
     HomeComponent,
     FooterComponent,
-    HeroesDetailComponent
+    HeroesDetailComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,

@@ -1,8 +1,10 @@
-<section *ngIf="hero" class="herodetail_container">
-
+<section >
     <div class="back_button">
         <a routerLink="/"> <img src="assets/img/back_arrow.svg" alt="Back Icon"> </a>
     </div>
+</section>
+
+<section *ngIf="hero" class="herodetail_container" id="init">
 
     <div class="hero_init">
         <h2>{{ hero.name }}</h2>
@@ -69,10 +71,5 @@
         </div>
 
     </div>
-   
-    
-    
-
-
 
 </section>

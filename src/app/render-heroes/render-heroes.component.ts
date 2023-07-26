@@ -22,7 +22,6 @@ export class RenderHeroesComponent{
   eyeColors:any[]=[];
   hairColors:any[]=[];
 
-  showPowerstatButtons = false;
   noHeroesFound: boolean = false;
 
   constructor(private _heroesService: HeroesService) { }
@@ -40,6 +39,8 @@ export class RenderHeroesComponent{
       this.getWeightsFromHeroes();
       this.getEyecolorsFromHeroes();
       this.getHaircolorsFromHeroes();
+      this.sortHeights();
+      this.sortWeights();
     } catch (error) {
       // ITS PLANNED TO ADD A ERROR MESSAGE TO SHOW IT TO THE USER
     }
@@ -47,8 +48,6 @@ export class RenderHeroesComponent{
 
   ngOnInit() {
     this.loadHeroes();
-    this.sortHeights();
-    this.sortWeights();
   }
 
   filterHeroes() {
@@ -69,8 +68,6 @@ export class RenderHeroesComponent{
 
     this.page = 1;
   }
-
-  // LOADING
 
   //POWERSTATS
 

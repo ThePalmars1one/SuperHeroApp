@@ -1,6 +1,6 @@
 .hero_card img {
-    width: 200px;
-    height: 250px;
+    width: 210px;
+    height: 260px;
     margin-bottom: 10px;
 }
 
@@ -10,8 +10,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 300px;
-    height: 320px;
+    width: 310px;
+    height: 340px;
     background: #0C6AF6;
     border-radius: 25px;
     cursor: pointer;
@@ -47,6 +47,24 @@
     transition: opacity 0.4s ease-in-out;
 }
 
+.hero_details{
+    position: absolute;
+    bottom: -10px;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.hero_details a{
+    background: #F6283B;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 25px;
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+
 .hero_stats_names h2 {
     display: flex;
     align-items: center;
@@ -63,7 +81,13 @@
     text-align: center;
 }
 
-.hero_card:hover .hero_stats_container {
+.hero_details:hover a{
+    background: white;
+    color: #F6283B;
+
+}
+
+.hero_card:hover .hero_stats_container, .hero_card:hover .hero_details  {
     opacity: 1;
 }
 

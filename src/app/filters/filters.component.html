@@ -1,0 +1,8 @@
+<div class="toggle_filters" [class.open]="isMenuOpen">
+    <h2 id="button_title" (click)="toggleMenu()">{{ title }}</h2>
+    <div class="options_container">
+        <button class="buttonFor" *ngFor="let option of options" (click)="selectFilter(option)">
+            {{ option }}
+        </button>
+    </div>
+</div>
